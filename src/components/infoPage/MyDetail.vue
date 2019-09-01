@@ -89,7 +89,7 @@
     page-title(title="如何找到我?" summary="更多信息、更多分享、更多回忆")
     .link
         .link-itme 知乎
-    navigation-bar(:menus="menus")
+    navigation-bar(:menus="menus" :select="selectedPageIndex")
 </template>
 
 <script>
@@ -102,16 +102,60 @@ export default {
         linkList: [
             { key: '简书', src: 'https://www.jianshu.com/u/3ee5572a4346', icon: '123'}
         ],
+        // 导航菜单数据
         menus: [
             { label: '介 绍', value: '.anchor1' },
             { label: '技 能', value: '.anchor2' },
             { label: '项 目', value: '.anchor3' },
             { label: '兴 趣', value: '.anchor4' },
         ],
+        // 导航菜单页面距离页面流顶端的距离，由 getAllPageOffsetTop 方法自动填充
+        menusOffsetTop: [],
+        // 当前应高亮的导航条索引
+        selectedPageIndex: 0
     }),
     components: { PageTitle, NavigationBar },
     methods: {
-        
+        /**
+         * 获取所有信息页面组件到页面流顶部的距离
+         */
+        getAllPageOffsetTop() {
+            this.menusOffsetTop = this.menus.map(menu => {
+                return this.getElementToPageTop(document.querySelector(menu.value))
+            })
+        },
+        /**
+         * 页面滚动监听
+         * 判断窗口滚动到了哪个信息页的位置
+         */
+        onScroll() {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+
+            for (let index in this.menusOffsetTop) {
+                index = Number(index)
+                // 当前滚动到的页面高度要大于某个信息页的高
+                if (scrollTop >= this.menusOffsetTop[index]) {
+                    const nextOffset = this.menusOffsetTop[index + 1]
+                    // 如果是最后一个页面的话就i直接高亮最后一个
+                    if (!nextOffset) {
+                        this.selectedPageIndex = index
+                        break
+                    }
+                    // 当前滚动到的高度要小于下个信息页的高度，这样才算在某个页的区间内
+                    if (scrollTop < nextOffset) {
+                        this.selectedPageIndex = index
+                        break
+                    }
+                }
+            }
+        }
+    },
+    mounted() {
+        this.getAllPageOffsetTop()
+        window.addEventListener('scroll', this.onScroll)
+    },
+    destroyed () {
+        window.removeEventListener('scroll', this.onScroll)
     }
 }
 </script>

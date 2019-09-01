@@ -41,7 +41,7 @@ export default {
     },
     components: { ...infoPages },
     methods: {
-
+        
     },
     mounted() {
 

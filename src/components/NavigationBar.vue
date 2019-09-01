@@ -63,9 +63,15 @@
 export default {
     name: 'NavigationBar',
     props: {
+        // 显示的菜单数据
         menus: {
             type: Array,
             required: true
+        },
+        // 选中的菜单索引
+        select: {
+            type: Number,
+            default: 0
         }
     },
     computed: {
@@ -81,8 +87,17 @@ export default {
         // 当前高亮的按钮索引
         selectButtonIndex: 0,
         // 导航条是否固定
-        fixed: false
+        fixed: false,
+        // 导航条在页面中的高度
+        navBarOffsetTop: 0
     }),
+    watch: {
+        select(val) {
+            if (val >= 0 && val < this.menus.length) {
+                this.selectButtonIndex = val
+            }
+        }
+    },
     methods: {
         /**
          * 导航按钮点击事件
@@ -109,25 +124,12 @@ export default {
          */
         onScroll() {
             const scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
-            const navBarOffsetTop = this.getElementToPageTop(this.$refs.navBar)
             // 这里减去的 56 是导航条 css 中 top 属性偏移的像素值
-            this.fixed = scrollTop >= (navBarOffsetTop - 56)
-        },
-        /**
-         * 递归获取导航条到页面流顶端的距离
-         * 
-         * @param {object} el 要获取高度的 html 元素
-         * @returns {number} 元素到页面顶端的距离
-         * @see https://blog.csdn.net/u013764814/article/details/83825479
-         */
-        getElementToPageTop(el) {
-            if(el.parentElement) {
-                return this.getElementToPageTop(el.parentElement) + el.offsetTop
-            }
-            return el.offsetTop
+            this.fixed = scrollTop >= (this.navBarOffsetTop - 56)
         }
     },
     mounted() {
+        this.navBarOffsetTop = this.getElementToPageTop(this.$refs.navBar)
         window.addEventListener('scroll', this.onScroll)
     },
     destroyed () {
