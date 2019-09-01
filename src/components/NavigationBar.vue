@@ -1,54 +1,69 @@
 <style scoped lang="stylus">
-.navigation
-    display flex
-    flex-flow column nowrap
+.nav-area
     // 导航条的位置, 此处的 absolute 会被本组件中的滚动监听替换成 fixed
     position absolute
-    top 56px
-    left 56px
-    // 导航条背景颜色
-    background-color black
+    top 0px
+    right 56px
+    bottom 0px
 
-    .nav-btn
-        width 70px
-        height 35px
-        padding 20px
-        font-weight bolder
-        color white
-        cursor pointer
-        position relative
-        transition color .2s
+    .navigation
+        display flex
+        flex-flow column nowrap
+        // 导航条背景颜色
+        background-color black
+        margin-top 56px
 
-        span
-            line-height 40px
-
-        .nav-btn-background
-            z-index -1
-            position absolute
-            width 0px
-            height 100%
-            background-color #666666
-            transition width .2s
-            top 0px
-            left 0px
-
-        &:hover
+        .nav-btn
+            width 70px
+            height 35px
+            padding 20px
+            font-weight bolder
             color white
+            cursor pointer
+            position relative
+            transition color .2s
+
+            span
+                position relative
+                line-height 40px
+                z-index 1
 
             .nav-btn-background
-                width 100%
+                z-index 0
+                position absolute
+                width 0px
+                height 100%
+                background-color #666666
+                transition width .2s
+                top 0px
+                left 0px
+
+            &:hover
+                color white
+
+                .nav-btn-background
+                    width 100%
+    .back-top
+        margin-top 35px
+        height 35px
+        width 70px
+        padding 20px
+        cursor pointer
+        background-color black
 
 .fixed
     position fixed
 </style>
 
 <template lang="pug">
-.navigation(ref="navBar" :class="fixed? 'fixed' : ''")
-    .nav-btn(v-for="item, index in menus" 
-             :style="index === selectButtonIndex ? selectButtonStyle : ''"
-             @click="onNavigateButtonClick(index, item.value)") 
-        span {{item.label}}
-        .nav-btn-background
+.nav-area(ref="navBar" :class="fixed? 'fixed' : ''")
+    .navigation
+        .nav-btn(v-for="item, index in menus" 
+                :style="index === selectButtonIndex ? selectButtonStyle : ''"
+                @click="jumpTo(item.value)") 
+            span {{item.label}}
+            .nav-btn-background
+    .back-top(@click="backTop")
 </template>
 
 <script>
@@ -124,8 +139,11 @@ export default {
          */
         onScroll() {
             const scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
-            // 这里减去的 56 是导航条 css 中 top 属性偏移的像素值
-            this.fixed = scrollTop >= (this.navBarOffsetTop - 56)
+            // console.log(scrollTop, this.navBarOffsetTop)
+            this.fixed = scrollTop >= this.navBarOffsetTop
+        },
+        backTop() {
+            window.scroll({ top: 0, left: 0, behavior: 'smooth' })
         }
     },
     mounted() {
