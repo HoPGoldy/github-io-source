@@ -2,7 +2,7 @@
 .scroll-container
     position relative
     background-attachment:fixed
-    background-size 100% auto
+    background-size cover
 
     .page-list
         display flex
