@@ -2,8 +2,8 @@
 .navigation
     display flex
     flex-flow column nowrap
-    // 导航条的位置
-    position fixed
+    // 导航条的位置, 此处的 absolute 会被本组件中的滚动监听替换成 fixed
+    position absolute
     top 56px
     left 56px
     // 导航条背景颜色
@@ -37,10 +37,13 @@
 
             .nav-btn-background
                 width 100%
+
+.fixed
+    position fixed
 </style>
 
 <template lang="pug">
-.navigation
+.navigation(ref="navBar" :class="fixed? 'fixed' : ''")
     .nav-btn(v-for="item, index in menus" 
              :style="index === selectButtonIndex ? selectButtonStyle : ''"
              @click="onNavigateButtonClick(index, item.value)") 
@@ -75,7 +78,10 @@ export default {
         }
     },
     data: () => ({
-        selectButtonIndex: 0
+        // 当前高亮的按钮索引
+        selectButtonIndex: 0,
+        // 导航条是否固定
+        fixed: false
     }),
     methods: {
         /**
@@ -96,7 +102,36 @@ export default {
          */
         jumpTo(selector) {
             document.querySelector(selector).scrollIntoView({ behavior: 'smooth' })
+        },
+        /**
+         * 监听导航条在页面流中的位置
+         * 一旦到达顶端则固定
+         */
+        onScroll() {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+            const navBarOffsetTop = this.getElementToPageTop(this.$refs.navBar)
+            // 这里减去的 56 是导航条 css 中 top 属性偏移的像素值
+            this.fixed = scrollTop >= (navBarOffsetTop - 56)
+        },
+        /**
+         * 递归获取导航条到页面流顶端的距离
+         * 
+         * @param {object} el 要获取高度的 html 元素
+         * @returns {number} 元素到页面顶端的距离
+         * @see https://blog.csdn.net/u013764814/article/details/83825479
+         */
+        getElementToPageTop(el) {
+            if(el.parentElement) {
+                return this.getElementToPageTop(el.parentElement) + el.offsetTop
+            }
+            return el.offsetTop
         }
     },
+    mounted() {
+        window.addEventListener('scroll', this.onScroll)
+    },
+    destroyed () {
+        window.removeEventListener('scroll', this.onScroll)
+    }
 }
 </script>

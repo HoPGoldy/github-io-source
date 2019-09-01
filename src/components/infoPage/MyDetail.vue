@@ -1,5 +1,9 @@
 <style lang="stylus" scoped>
 .detail-container
+    // 注意下面的 position 设置
+    // 这是为了本组件下的导航条可以正常定位
+    position relative
+
     background-color white
     display flex
     flex-flow column nowrap
@@ -85,20 +89,27 @@
     page-title(title="如何找到我?" summary="更多信息、更多分享、更多回忆")
     .link
         .link-itme 知乎
-
+    navigation-bar(:menus="menus")
 </template>
 
 <script>
 import PageTitle from '../PageTitle'
+import NavigationBar from '../NavigationBar'
 
 export default {
     name: 'MyDetail',
     data: () => ({
         linkList: [
             { key: '简书', src: 'https://www.jianshu.com/u/3ee5572a4346', icon: '123'}
-        ]
+        ],
+        menus: [
+            { label: '介 绍', value: '.anchor1' },
+            { label: '技 能', value: '.anchor2' },
+            { label: '项 目', value: '.anchor3' },
+            { label: '兴 趣', value: '.anchor4' },
+        ],
     }),
-    components: { PageTitle },
+    components: { PageTitle, NavigationBar },
     methods: {
         
     }

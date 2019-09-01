@@ -21,22 +21,14 @@
         my-skill.anchor2
         my-project.anchor3
         my-interest.anchor4
-    navigation-bar(:menus="menus")
 </template>
 
 <script>
 import allBackgroundImages from 'images/bg'
 import infoPages from '../components/infoPage'
-import NavigationBar from '../components/NavigationBar'
 export default {
     name: 'MainScroll',
     data: () => ({
-        menus: [
-            { label: '介 绍', value: '.anchor1' },
-            { label: '技 能', value: '.anchor2' },
-            { label: '项 目', value: '.anchor3' },
-            { label: '兴 趣', value: '.anchor4' },
-        ],
         allBackgroundImages
     }),
     computed: {
@@ -47,7 +39,7 @@ export default {
             }
         }
     },
-    components: { ...infoPages, NavigationBar },
+    components: { ...infoPages },
     methods: {
 
     },
