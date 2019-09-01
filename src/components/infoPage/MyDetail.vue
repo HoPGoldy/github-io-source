@@ -38,7 +38,8 @@
         .my-introduce
             width 26%
             padding-right 40px
-            text-align left
+            p
+                text-align left
             h3
                 font-size 28px
         // 中间头像
@@ -52,17 +53,21 @@
             width 26%
             padding-left 40px
             text-align left
+            .content
+                padding-left 30%
             h3
+                text-align center
                 font-size 28px
     
-    .link-title
-        padding 32px
     // 可以找到我的其他链接
-    .link
+    .link-area
+        margin 0px 10%
         padding 32px
         display flex
+        justify-content space-around
         flex-flow row wrap
-
+        .link-item
+            margin 0px 32px
         
 </style>
 
@@ -77,30 +82,55 @@
             .avatar-bordar
         .my-info
             h3 个人信息
-            strong 姓名：
-            span 黄普光
-            br
-            strong 年龄：
-            span 22岁
-            br
-            strong 地址：
-            span 山东菏泽
-            br
+            .content
+                strong 姓名：
+                span 黄普光
+                br
+                strong 年龄：
+                span 22岁
+                br
+                strong 地址：
+                span 山东菏泽
+                br
     page-title(title="如何找到我?" summary="更多信息、更多分享、更多回忆")
-    .link
-        .link-itme 知乎
+    .link-area
+        link-item.link-item(v-for="item in linkList" :detail="item")
     navigation-bar(:menus="menus" :select="selectedPageIndex")
 </template>
 
 <script>
 import PageTitle from '../PageTitle'
 import NavigationBar from '../NavigationBar'
+import LinkItem from '../LinkItem'
 
 export default {
     name: 'MyDetail',
     data: () => ({
         linkList: [
-            { key: '简书', src: 'https://www.jianshu.com/u/3ee5572a4346', icon: '123'}
+            { 
+                key: '简书', 
+                label: '简书 - 个人博客',
+                src: 'https://www.jianshu.com/u/3ee5572a4346', 
+                icon: require('@/images/jianshu.svg')
+            },
+            { 
+                key: 'github', 
+                label: 'github.com/hopgoldy',
+                src: 'https://github.com/HoPGoldy', 
+                icon: require('@/images/github.svg')
+            },
+            { 
+                key: '邮箱', 
+                label: 'hopgoldy@gmail.com', 
+                src: 'mailto:hopgoldy@gmail.com?subject=hello hopgoldy!',
+                icon: require('@/images/email.svg')
+            },
+            { 
+                key: '邮箱', 
+                label: 'steam 一起嗨皮!',
+                src: 'https://steamcommunity.com/id/272256000',
+                icon: require('@/images/steam.svg')
+            },
         ],
         // 导航菜单数据
         menus: [
@@ -114,7 +144,7 @@ export default {
         // 当前应高亮的导航条索引
         selectedPageIndex: 0
     }),
-    components: { PageTitle, NavigationBar },
+    components: { PageTitle, NavigationBar, LinkItem },
     methods: {
         /**
          * 获取所有信息页面组件到页面流顶部的距离

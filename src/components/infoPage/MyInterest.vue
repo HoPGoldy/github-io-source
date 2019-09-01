@@ -6,7 +6,7 @@
 
 <template lang="pug">
 .skill-container
-    page-title(title="我的爱好" summary="让热爱的事情，成为自己进步的阶梯")
+    page-title(title="我的兴趣" summary="让热爱的事情，成为自己进步的阶梯")
 </template>
 
 <script>
