@@ -1,12 +1,19 @@
 <style lang="stylus" scoped>
 .first-container
-    background-color rgba(0, 0, 0, 0)
     text-align center
     font-size 65px
     font-weight bolder
     color white
     position relative
 
+    .bg
+        position absolute
+        top 0
+        bottom 0
+        left 0
+        right 0
+        background-color black
+        opacity 0.2
     .info-box
         position relative
         cursor default
@@ -14,6 +21,7 @@
 
     .continue-tip
         position absolute
+        opacity 0.7
         width 100%
         bottom 10%
 
@@ -23,6 +31,7 @@
 
 <template lang="pug">
 .first-container(:style="{ height: windowHeight }" @click="jumpToElement")
+    .bg
     .info-box HoPGoldy
     .continue-tip
         svg.icon(t='1567040838902', viewBox='0 0 1024 1024', version='1.1', xmlns='http://www.w3.org/2000/svg', p-id='10128', width='64', height='64')
