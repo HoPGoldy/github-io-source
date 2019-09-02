@@ -8,27 +8,18 @@
     display flex
     flex-flow column nowrap
 
-    .title
-        width 100%
-        display flex
-        flex-flow column nowrap
-        
-        // 名字样式
-        .my-name
-            padding 20px 0px
-            font-size 54px
-        // 名字下面那句话
-        .my-summary
-            font-size 21px
-        // 分割线
-        hr 
-            margin 30px 20%
-            opacity 0.2
-            border-top #727878 solid 2px 
+    // 小标题样式
+    .sub-title
+        font-size 28px
+    // 分割线
+    hr 
+        margin 30px 20%
+        opacity 0.2
+        border-top #727878 solid 2px 
         
     .detail
         width 70%
-        padding 30px 15% 0px 15%
+        padding 30px 15% 30px 15%
         // flex 配置
         display flex
         flex-flow row nowrap
@@ -37,9 +28,8 @@
         // 左边长段介绍
         .my-introduce
             width 26%
-            padding-right 40px
-            p
-                text-align left
+            padding 0px 40px
+            text-align left
             h3
                 font-size 28px
         // 中间头像
@@ -48,6 +38,10 @@
             height 200px
             border-radius 50%
             border #e8e8e8 solid 13px
+            overflow hidden
+            img 
+                max-width 100%
+                
         // 右侧个人信息
         .my-info
             width 26%
@@ -77,22 +71,28 @@
     .detail
         .my-introduce 
             h3 自我介绍
-            p 我是一名前端开发者，喜欢工程化的前端项目，注释不足恐惧症。热衷于使用掌握的技术把脑子里的新鲜点子实现出来。
+            p 我是一名前端开发者，喜欢工程化的前端项目，注释不足恐惧症。喜欢分享，热衷于使用掌握的技术把脑子里的新鲜点子实现出来。
         .my-avatar
             .avatar-bordar
-        .my-info
-            h3 个人信息
-            .content
-                strong 姓名：
-                span 黄普光
-                br
-                strong 年龄：
-                span 22岁
-                br
-                strong 地址：
-                span 山东菏泽
-                br
-    page-title(title="如何找到我?" summary="更多信息、更多分享、更多回忆")
+                img(src="@/images/avatar.jpeg")
+        .my-introduce
+            h3 发展方向
+            p 热爱前端，为了统一的大前端梦想而努力奋斗。喜欢折腾服务器、正在研究从 git 到 docker 的部署流程，致力于构建简洁的自动 CI / CD。
+        //- .my-info
+        //-     h3 个人信息
+        //-     .content
+        //-         strong 姓名：
+        //-         span XXX
+        //-         br
+        //-         strong 年龄：
+        //-         span 22岁
+        //-         br
+        //-         strong 地址：
+        //-         span 山东菏泽
+        //-         br
+    hr
+    .sub-title 如何找到我？
+    //- page-title(title="如何找到我?" summary="更多信息、更多分享、更多回忆")
     .link-area
         link-item.link-item(v-for="item, index in linkList" :key="index" :detail="item")
     navigation-bar(:menus="menus" :select="selectedPageIndex")

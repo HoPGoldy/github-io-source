@@ -39,7 +39,7 @@
         line-item.skill-item(v-for="item, index in fontendSkills" :key="index" :title="item.title" :star="item.star")
     hr
 
-    .skill-title 服务器 & 其他
+    .skill-title 其他 & 服务器
     .skill-list
         line-item.skill-item(v-for="item, index in backendSkills" :key="index" :title="item.title" :star="item.star")
     hr
