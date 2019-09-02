@@ -58,7 +58,8 @@
 <template lang="pug">
 .nav-area(ref="navBar" :class="fixed? 'fixed' : ''")
     .navigation
-        navigation-button(v-for="item, index in menus" 
+        navigation-button(v-for="item, index in menus"
+                          :key="index"
                           :selected="index == selectButtonIndex"
                           @click="jumpTo(item.value)")
             div {{item.label}}

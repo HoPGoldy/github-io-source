@@ -94,7 +94,7 @@
                 br
     page-title(title="如何找到我?" summary="更多信息、更多分享、更多回忆")
     .link-area
-        link-item.link-item(v-for="item in linkList" :detail="item")
+        link-item.link-item(v-for="item, index in linkList" :key="index" :detail="item")
     navigation-bar(:menus="menus" :select="selectedPageIndex")
 </template>
 
