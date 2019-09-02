@@ -135,7 +135,7 @@ export default {
         // 导航菜单数据
         menus: [
             { label: '介 绍', value: '.anchor1' },
-            { label: '技 能', value: '.anchor2' },
+            { label: '能 力', value: '.anchor2' },
             { label: '项 目', value: '.anchor3' },
             { label: '兴 趣', value: '.anchor4' },
         ],
