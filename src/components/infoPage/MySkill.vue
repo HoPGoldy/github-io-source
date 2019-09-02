@@ -18,16 +18,7 @@
     hr 
         margin 40px 20%
         opacity 0.2
-        border-top #727878 solid 2px 
-    // 可以找到我的其他链接
-    .link-area
-        margin 0px 10%
-        padding 32px
-        display flex
-        justify-content space-around
-        flex-flow row wrap
-        .link-item
-            margin 0px 32px
+        border-top #727878 solid 2px
 </style>
 
 <template lang="pug">
@@ -47,17 +38,11 @@
     .skill-title 我的工具
     .skill-list
         line-item.skill-item(v-for="item, index in workSkills" :key="index" :title="item.title" :star="item.star")
-    hr
-
-    .skill-title 你可以在以下网站找到我的发布
-    .link-area
-        link-item.link-item(v-for="item, index in linkList" :key="index" :detail="item")
 </template>
 
 <script>
 import LineItem from './skillComp/LineItem'
 import PageTitle from '../PageTitle'
-import LinkItem from '../LinkItem'
 
 export default {
     name: 'MySkill',
@@ -103,29 +88,9 @@ export default {
             { title: 'Git / Git flow', star: 4 },
             { title: 'NotePad++', star: 4 },
             { title: 'Pycharm', star: 3 },
-        ],
-        linkList: [
-            { 
-                key: 'npm', 
-                label: 'www.npmjs.com',
-                src: 'https://www.npmjs.com/~hopgoldy', 
-                icon: require('@/images/npm.svg')
-            },
-            { 
-                key: 'DockerHub', 
-                label: 'hub.docker.com',
-                src: 'https://hub.docker.com/u/hopgoldy', 
-                icon: require('@/images/docker.svg')
-            },
-            { 
-                key: 'github', 
-                label: 'github.com',
-                src: 'https://github.com/HoPGoldy?tab=repositories', 
-                icon: require('@/images/github.svg')
-            },
         ]
     }),
-    components: { LineItem, PageTitle, LinkItem },
+    components: { LineItem, PageTitle },
     methods: {
         
     }
