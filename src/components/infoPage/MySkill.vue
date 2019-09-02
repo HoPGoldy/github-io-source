@@ -64,28 +64,34 @@ export default {
     data: () => ({
         // 前端技能
         fontendSkills: [
-            { title: 'node.js', star: 5 },
+            { title: 'Node.js', star: 5 },
             { title: 'Vue', star: 5 },
             { title: 'Element UI', star: 5 },
             { title: 'Yarn', star: 5 },
             { title: 'Stylus', star: 5 },
             { title: 'pug', star: 5 },
+            { title: 'JSON', star: 5 },
+            { title: 'XML', star: 5 },
             { title: 'CSS3', star: 4 },
             { title: 'HTML5', star: 4 },
             { title: 'echarts', star: 4 },
             { title: '微信小程序', star: 4 },
+            { title: 'JQuery', star: 3 },
             { title: 'leflet', star: 3 },
+            { title: 'animejs', star: 3 },
         ],
         // 其他技能
         backendSkills: [
             { title: 'Python3', star: 5 },
             { title: 'Express', star: 4 },
             { title: 'Docker', star: 4 },
+            { title: 'Yaml', star: 4 },
             { title: 'Swagger', star: 3 },
             { title: '腾讯 SCF', star: 3 },
             { title: 'Docker Compose', star: 3 },
             { title: 'Kubernetes', star: 3 },
-            { title: 'Helm', star: 2 },
+            { title: 'MySQL', star: 2 },
+            { title: 'Helm', star: 1 },
         ],
         // 软件使用技能
         workSkills: [
