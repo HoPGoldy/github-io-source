@@ -111,25 +111,25 @@ export default {
                 key: '简书', 
                 label: '简书 - 个人博客',
                 src: 'https://www.jianshu.com/u/3ee5572a4346', 
-                icon: require('@/images/jianshu.svg')
+                icon: require('@/images/icon/jianshu.svg')
             },
             { 
                 key: 'github', 
                 label: 'github.com/hopgoldy',
                 src: 'https://github.com/HoPGoldy', 
-                icon: require('@/images/github.svg')
+                icon: require('@/images/icon/github.svg')
             },
             { 
                 key: '邮箱', 
                 label: 'hopgoldy@gmail.com', 
                 src: 'mailto:hopgoldy@gmail.com?subject=hello hopgoldy!',
-                icon: require('@/images/email.svg')
+                icon: require('@/images/icon/email.svg')
             },
             { 
                 key: '邮箱', 
                 label: 'steam 一起嗨皮!',
                 src: 'https://steamcommunity.com/id/272256000',
-                icon: require('@/images/steam.svg')
+                icon: require('@/images/icon/steam.svg')
             },
         ],
         // 导航菜单数据

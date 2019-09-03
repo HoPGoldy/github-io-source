@@ -83,19 +83,19 @@ export default {
                 key: 'npm', 
                 label: 'www.npmjs.com',
                 src: 'https://www.npmjs.com/~hopgoldy', 
-                icon: require('@/images/npm.svg')
+                icon: require('@/images/icon/npm.svg')
             },
             { 
                 key: 'DockerHub', 
                 label: 'hub.docker.com',
                 src: 'https://hub.docker.com/u/hopgoldy', 
-                icon: require('@/images/docker.svg')
+                icon: require('@/images/icon/docker.svg')
             },
             { 
                 key: 'github', 
                 label: 'github.com',
                 src: 'https://github.com/HoPGoldy?tab=repositories', 
-                icon: require('@/images/github.svg')
+                icon: require('@/images/icon/github.svg')
             },
         ]
     }),

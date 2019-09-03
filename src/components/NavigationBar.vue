@@ -65,7 +65,7 @@
                           @click="jumpTo(item.value)")
             div {{item.label}}
     navigation-button.back-top(@click="backTop")
-        img(src="@/images/upArrow.svg")
+        img(src="@/images/icon/upArrow.svg")
 </template>
 
 <script>

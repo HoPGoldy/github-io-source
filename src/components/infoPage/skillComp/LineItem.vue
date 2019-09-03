@@ -25,8 +25,8 @@
 .item-container
     .skill-name {{title}}
     .skill-star
-        img(v-for="number in star" :key="number" src="@/images/star.svg")
-        img(v-for="number in (5 - star)" :key="star + number" src="@/images/unstar.svg")
+        img(v-for="number in star" :key="number" src="@/images/icon/star.svg")
+        img(v-for="number in (5 - star)" :key="star + number" src="@/images/icon/unstar.svg")
 </template>
 
 <script>
