@@ -18,9 +18,9 @@
     .page-list
         first-screen(jump-to=".anchor1")
         my-detail.anchor1
-        my-skill.anchor2
-        my-project.anchor3
-        my-interest.anchor4
+        my-experiences.anchor2
+        my-skill.anchor3
+        my-project.anchor4
 </template>
 
 <script>

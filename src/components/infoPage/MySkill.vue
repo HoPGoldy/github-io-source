@@ -1,7 +1,6 @@
 <style lang="stylus" scoped>
 .skill-container
     padding-bottom 40px
-    background-color #f3efe0
 
     .skill-title
         font-size 28px
@@ -63,7 +62,7 @@ export default {
             { title: '微信小程序', star: 4 },
             { title: 'JQuery', star: 3 },
             { title: 'leflet', star: 3 },
-            { title: 'animejs', star: 3 },
+            { title: 'animejs', star: 2 },
         ],
         // 其他技能
         backendSkills: [

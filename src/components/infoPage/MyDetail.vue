@@ -135,9 +135,9 @@ export default {
         // 导航菜单数据
         menus: [
             { label: '介 绍', value: '.anchor1' },
-            { label: '能 力', value: '.anchor2' },
-            { label: '项 目', value: '.anchor3' },
-            { label: '兴 趣', value: '.anchor4' },
+            { label: '履 历', value: '.anchor2' },
+            { label: '能 力', value: '.anchor3' },
+            { label: '项 目', value: '.anchor4' },
         ],
         // 导航菜单页面距离页面流顶端的距离，由 getAllPageOffsetTop 方法自动填充
         menusOffsetTop: [],
