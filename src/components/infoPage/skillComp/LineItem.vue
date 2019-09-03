@@ -15,7 +15,7 @@
             transition all .2s
     
     &:hover
-        background-color white
+        background-color #eee
         border-radius 7px
         .skill-star *
             padding 0px 2px
