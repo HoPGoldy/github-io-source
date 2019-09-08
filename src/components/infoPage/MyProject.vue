@@ -72,7 +72,7 @@ export default {
             },
             {
                 title: 'K8S 搭建与学习',
-                content: '在学习和使用 K8S 时留下的文章合集，包含搭建和使用两大部分，共计两万余字。',
+                content: '在学习和使用 K8S 时留下的文章合集，包含搭建和使用两大部分，共计两万余字。目前博客已发布文章60篇，内容总计逾7万字。',
                 pic: require('@/images/project/k8s.png'),
                 src: 'https://www.jianshu.com/c/4ab454e9afdb'
             }
