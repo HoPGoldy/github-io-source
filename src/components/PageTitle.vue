@@ -16,15 +16,14 @@
     hr 
         margin 30px 20%
         opacity 0.2
-        border-top #727878 solid 2px 
         
 </style>
 
 <template lang="pug">
 .page-title
-    .my-name {{title}}
-    .my-summary {{summary}}
-    hr
+    .my-name(:style="fontStyle") {{title}}
+    .my-summary(:style="fontStyle") {{summary}}
+    hr(:style="borderStyle")
 </template>
 
 <script>
@@ -34,6 +33,8 @@
  * 
  * @param {string} title 显示的段落标题
  * @param {string} summary 显示的摘要
+ * @param {string} color 标题和摘要的颜色
+ * @param {string} borderColor 分隔线的颜色
  */
 export default {
     name: 'PageTitle',
@@ -43,11 +44,30 @@ export default {
             required: true
         },
         summary: {
+            type: String
+        },
+        color: {
             type: String,
-            required: true
+            default: ''
+        },
+        borderColor: {
+            type: String,
+            default: '#727878'
         }
     },
     data: () => ({ }),
+    computed: {
+        fontStyle() {
+            return {
+                color: this.color
+            }
+        },
+        borderStyle() {
+            return {
+                borderTop: `${this.borderColor} solid 2px`
+            }
+        }
+    },
     methods: { }
 }
 </script>

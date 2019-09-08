@@ -21,6 +21,7 @@
         my-experiences.anchor2
         my-skill.anchor3
         my-project.anchor4
+        my-footer
 </template>
 
 <script>
