@@ -9,7 +9,7 @@ yarn build
 
 echo "复制到 github.io"
 rm -rf /home/auto-deploy-repository/HoPGoldy.github.io/**
-copy /hom/auto-deploy-repository/github-io-source/dist/** /home/auto-deploy-repository/HoPGoldy.github.io/
+cp -r /home/auto-deploy-repository/github-io-source/dist/** /home/auto-deploy-repository/HoPGoldy.github.io/
 
 echo "提交 github.io"
 cd /home/auto-deploy-repository/HoPGoldy.github.io/
