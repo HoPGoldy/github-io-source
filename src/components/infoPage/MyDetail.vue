@@ -1,66 +1,8 @@
 <style lang="stylus" scoped>
-.detail-container
-    // 注意下面的 position 设置
-    // 这是为了本组件下的导航条可以正常定位
-    position relative
-
-    background-color white
-    display flex
-    flex-flow column nowrap
-
-    // 小标题样式
-    .sub-title
-        font-size 28px
-    // 分割线
-    hr 
-        margin 30px 20%
-        opacity 0.2
-        border-top #727878 solid 2px 
-        
-    .detail
-        width 70%
-        padding 30px 15% 30px 15%
-        // flex 配置
-        display flex
-        flex-flow row nowrap
-        justify-content center
-
-        // 左边长段介绍
-        .my-introduce
-            width 26%
-            padding 0px 40px
-            text-align left
-            h3
-                font-size 28px
-        // 中间头像
-        .my-avatar
-            width 200px
-            height 200px
-            border-radius 50%
-            border #e8e8e8 solid 13px
-            overflow hidden
-            img 
-                max-width 100%
-                
-        // 右侧个人信息
-        .my-info
-            width 26%
-            padding-left 40px
-            text-align left
-            .content
-                padding-left 30%
-            h3
-                text-align center
-                font-size 28px
-    
-    // 可以找到我的其他链接
-    .link-area
-        margin 0px 10%
-        padding 32px
-        display flex
-        justify-content space-between
-        flex-flow row wrap
-        
++mediaDesktop()
+    @import '../../styles/desktop/infoPage/MyDetail'
++mediaMobile()
+    @import '../../styles/mobile/infoPage/MyDetail'
 </style>
 
 <template lang="pug">
@@ -93,7 +35,7 @@
     //- page-title(title="如何找到我?" summary="更多信息、更多分享、更多回忆")
     .link-area
         link-item.link-item(v-for="item, index in linkList" :key="index" :detail="item")
-    navigation-bar(:menus="menus" :select="selectedPageIndex")
+    navigation-bar.nav-bar(:menus="menus" :select="selectedPageIndex")
 </template>
 
 <script>
