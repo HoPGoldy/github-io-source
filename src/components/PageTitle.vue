@@ -1,21 +1,40 @@
 <style scoped lang="stylus">
-.page-title
-    margin-top 60px
-    width 100%
-    display flex
-    flex-flow column nowrap
-    
-    // 名字样式
-    .my-name
-        padding 20px 0px
-        font-size 54px
-    // 名字下面那句话
-    .my-summary
-        font-size 21px
-    // 分割线
-    hr 
-        margin 30px 20%
-        opacity 0.2
++mediaDesktop()
+    .page-title
+        margin-top 60px
+        width 100%
+        display flex
+        flex-flow column nowrap
+        
+        // 标题样式
+        .my-name
+            padding 20px 0px
+            font-size 54px
+        // 标题下面那句话
+        .my-summary
+            font-size 21px
+        // 分割线
+        hr 
+            margin 30px 20%
+            opacity 0.2
++mediaMobile()
+    .page-title
+        margin-top 30px
+        width 100%
+        display flex
+        flex-flow column nowrap
+        
+        // 标题样式
+        .my-name
+            padding 10px 0px
+            font-size 40px
+        // 标题下面那句话
+        .my-summary
+            font-size 18px
+        // 分割线
+        hr 
+            margin 30px 10%
+            opacity 0.2
         
 </style>
 

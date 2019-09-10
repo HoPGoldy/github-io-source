@@ -4,6 +4,9 @@ const resolve = require('path').resolve
 module.exports = {
     // 选项...
     baseUrl: './',
+    css: {
+        extract: false,
+    },
     chainWebpack: config => {
         config.resolve.alias
             .set('images', resolve(__dirname, './src/images'))
