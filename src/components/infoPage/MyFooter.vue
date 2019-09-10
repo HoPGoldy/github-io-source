@@ -1,23 +1,47 @@
 <style scoped lang="stylus">
-.footer-container
-    box-shadow 0 17px 40px -5px #2d2d2d inset
-    background-color #434242
-    padding-bottom 16px
++mediaDesktop()
+    .footer-container
+        box-shadow 0 17px 40px -5px #2d2d2d inset
+        background-color #434242
+        padding-bottom 16px
 
-    .special-thx
-        color #e8e8e8
-        margin-bottom 60px
-        & *
-            margin-top 12px
-        .love
-            font-size 34px
-            color #ff9898
-    .describe
-        color #a2a2a2
-        display inline-block
-        margin 3px 0px
-    & a
-        color #a2a2a2
+        .special-thx
+            color #e8e8e8
+            margin-bottom 60px
+            & *
+                margin-top 12px
+            .love
+                font-size 34px
+                color #ff9898
+        .describe
+            color #a2a2a2
+            display inline-block
+            margin 3px 0px
+        & a
+            color #a2a2a2
+
++mediaMobile()
+    .footer-container
+        box-shadow 0 17px 40px -5px #2d2d2d inset
+        background-color #434242
+        padding 0px 10% 16px 10%
+
+        .special-thx
+            color #e8e8e8
+            margin-bottom 40px
+            font-size 16px
+            & *
+                margin-top 12px
+            .love
+                font-size 30px
+                color #ff9898
+        .describe
+            color #a2a2a2
+            display inline-block
+            font-size 15px
+            margin 3px 0px
+        & a
+            color #a2a2a2
 </style>
 
 <template lang="pug">
