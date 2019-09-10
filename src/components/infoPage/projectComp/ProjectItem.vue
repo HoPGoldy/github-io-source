@@ -59,6 +59,8 @@
             opacity 0
             margin-left 20px
             padding 18px
+            +mediaMobile()
+                font-size 15px
 </style>
 
 <template lang="pug">

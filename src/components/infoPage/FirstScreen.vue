@@ -1,8 +1,11 @@
 <style lang="stylus" scoped>
 .first-container
     text-align center
-    font-size 65px
-    font-weight bolder
+    +mediaDesktop()
+        font-size 65px
+        font-weight bolder
+    +mediaMobile()
+        font-size 50px
     color white
     position relative
 
