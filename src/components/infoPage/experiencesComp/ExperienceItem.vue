@@ -1,48 +1,90 @@
 <style scoped lang="stylus">
-.experience-item-container
-    display flex
-    flex-flow row nowrap
-    text-align left
-    padding 25px
-    transition all .2s
-    cursor default
++mediaDesktop()
+    .experience-item-container
+        display flex
+        flex-flow row nowrap
+        text-align left
+        padding 25px
+        transition all .2s
+        cursor default
 
-    &:hover
-        background-color rgba(0, 0, 0, 0.1)
-        border-radius 5px
+        &:hover
+            background-color rgba(0, 0, 0, 0.1)
+            border-radius 5px
+            .line
+                opacity 1
+
+        .left
+            width 25%
+            // 标题
+            .title
+                font-size 32px
+                font-weight bolder
+            // 日期
+            .date
+                font-size 23px
+            & div
+                margin 8px 0px
         .line
-            opacity 1
+            transition opacity .2s
+            width 2px
+            opacity 0
+            background-color #a9a9a9
+            margin 0px 5% 0px 5%
+        .right
+            width 65%
+            // 职位
+            .office
+                font-size 28px
+            .position
+                position relative
+                top -4px 
+                left 4px   
+                color #999
+            & div
+                margin 12px 0px
++mediaMobile()
+    .experience-item-container
+        display flex
+        flex-flow column nowrap
+        text-align left
+        padding 15px
+        transition all .2s
+        cursor default
 
-    .left
-        width 25%
-        // 标题
-        .title
-            font-size 32px
-            font-weight bolder
-        // 日期
-        .date
-            font-size 23px
-        & div
-            margin 8px 0px
-    .line
-        transition opacity .2s
-        width 2px
-        opacity 0
-        background-color #a9a9a9
-        margin 0px 5% 0px 5%
-    .right
-        width 65%
-        // 职位
-        .office
-            font-size 28px
-        .position
-            position relative
-            top -4px 
-            left 4px   
-            color #999
-        & div
-            margin 12px 0px
+        &:hover
+            background-color rgba(0, 0, 0, 0.1)
+            border-radius 5px
+            .line
+                opacity 1
 
+        .left
+            text-align center
+            // 标题
+            .title
+                font-size 28px
+                font-weight bolder
+            // 日期
+            .date
+                font-size 20px
+            & div
+                margin 8px 0px
+        .line
+            transition opacity .2s
+            height 2px
+            opacity 0
+            background-color #a9a9a9
+        .right
+            // 职位
+            .office
+                font-size 25px
+            .position
+                position relative
+                top -4px 
+                left 4px   
+                color #999
+            & div
+                margin 12px 0px
 </style>
 
 <template lang="pug">

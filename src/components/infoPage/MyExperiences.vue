@@ -1,10 +1,22 @@
 <style lang="stylus" scoped>
-.experience-container
-    background-color #f3efe0
-    padding-bottom 40px
-    
-    .experience-list
-        padding 0px 20%
++mediaDesktop()
+    .experience-container
+        background-color #f3efe0
+        padding-bottom 40px
+        
+        .experience-list
+            padding 0px 20%
+            
++mediaMobile()
+    .experience-container
+        background-color #f3efe0
+        padding-bottom 30px
+        
+        .experience-list
+            padding 0px 7%
+
+            & .item:not(:last-child)
+                border-bottom 2px solid #dad7c9
 </style>
 
 <template lang="pug">
