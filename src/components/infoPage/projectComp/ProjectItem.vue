@@ -16,7 +16,7 @@
         // 背景图放大
         .background-pic
             transform scale(1.1, 1.1)
-            
+
     // 背景图样式
     .background-pic
         max-width 100%
@@ -40,7 +40,10 @@
         .project-title
             transition opacity .2s
             opacity 0
-            font-size 28px
+            +mediaDesktop()
+                font-size 28px
+            +mediaMobile()
+                font-size 23px
             font-weight bolder
             padding 18px
         // 分割线样式

@@ -1,33 +1,63 @@
 <style lang="stylus" scoped>
-.project-container
-    background-color #f3efe0
-    .project-list
-        display flex
-        flex-flow row wrap
-        justify-content space-between
-        margin 0px 20%
++mediaDesktop()
+    .project-container
+        background-color #f3efe0
+        .project-list
+            display flex
+            flex-flow row wrap
+            justify-content space-between
+            margin 0px 20%
 
-        .item
-            width 47%
-            height 250px
-            margin 28px 0px
-    
-    // 分割线
-    .sub-title
-        font-size 28px
-    hr 
-        margin 40px 20%
-        opacity 0.2
-        border-top #727878 solid 2px 
-    // 可以找到我的其他链接
-    .link-area
-        margin 0px 10%
-        padding 32px
-        display flex
-        justify-content space-around
-        flex-flow row wrap
-        .link-item
-            margin 0px 32px
+            .item
+                width 47%
+                height 250px
+                margin 28px 0px
+        
+        // 分割线
+        .sub-title
+            font-size 28px
+        hr 
+            margin 40px 20%
+            opacity 0.2
+            border-top #727878 solid 2px 
+        // 可以找到我的其他链接
+        .link-area
+            margin 0px 10%
+            padding 32px
+            display flex
+            justify-content space-around
+            flex-flow row wrap
+            .link-item
+                margin 0px 32px
+
++mediaMobile()
+    .project-container
+        background-color #f3efe0
+        .project-list
+            display flex
+            flex-flow column wrap
+            justify-content space-between
+            margin 0px 10%
+
+            .item
+                margin 0px 0px 20px 0px
+        
+        // 分割线
+        .sub-title
+            font-size 24px
+        hr 
+            margin 20px 10%
+            opacity 0.2
+            border-top #727878 solid 2px 
+        // 可以找到我的其他链接
+        .link-area
+            margin 0px 10%
+            padding 32px
+            display flex
+            justify-content space-between
+            flex-flow row wrap
+            .link-item
+                margin 0px 32px
 </style>
 
 <template lang="pug">
