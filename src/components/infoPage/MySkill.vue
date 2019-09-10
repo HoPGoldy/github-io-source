@@ -1,23 +1,44 @@
 <style lang="stylus" scoped>
-.skill-container
-    padding-bottom 40px
++mediaDesktop()
+    .skill-container
+        padding-bottom 40px
 
-    .skill-title
-        font-size 28px
-    .skill-list
-        display flex
-        flex-flow row wrap
-        justify-content space-between
-        align-content flex-start
-        // 控制技能列表集中的程度
-        margin 16px 20%
-        .skill-item
-            width 40%
-    // 分割线
-    hr 
-        margin 40px 20%
-        opacity 0.2
-        border-top #727878 solid 2px
+        .skill-title
+            font-size 28px
+        .skill-list
+            display flex
+            flex-flow row wrap
+            justify-content space-between
+            align-content flex-start
+            // 控制技能列表集中的程度
+            margin 16px 20%
+            .skill-item
+                width 40%
+        // 分割线
+        hr 
+            margin 40px 20%
+            opacity 0.2
+            border-top #727878 solid 2px
++mediaMobile()
+    .skill-container
+        padding-bottom 40px
+
+        .skill-title
+            font-size 25px
+        .skill-list
+            display flex
+            flex-flow column wrap
+            justify-content space-between
+            align-content flex-start
+            // 控制技能列表集中的程度
+            margin 16px 7%
+            .skill-item
+                width 93%
+        // 分割线
+        hr 
+            margin 25px 10%
+            opacity 0.2
+            border-top #727878 solid 2px
 </style>
 
 <template lang="pug">
