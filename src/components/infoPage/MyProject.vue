@@ -56,8 +56,6 @@
             display flex
             justify-content space-between
             flex-flow row wrap
-            .link-item
-                margin 0px 32px
 </style>
 
 <template lang="pug">
