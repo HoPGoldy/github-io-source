@@ -83,25 +83,25 @@ export default {
             {
                 title: '学生社团管理系统',
                 content: '大学毕业设计，采用前端 Vue、后端 Express + MySQL 的架构，基于 docker 部署在我的个人服务器上。',
-                pic: require('@/images/project/student-club-management-system.png'),
+                pic: 'https://s1.ax1x.com/2020/03/25/8jTmzq.png',
                 src: 'https://student-club-management-system.netlify.com/'
             },
             {
                 title: 'auto-git',
                 content: '自动化项目部署工具, 支持配置 Git Webhook, 自动拉取项目并执行指定 shell 脚本来完成项目的自动化 CI。',
-                pic: require('@/images/project/auto-git.gif'),
+                pic: 'https://s1.ax1x.com/2020/03/25/8jTleU.gif',
                 src: 'https://www.npmjs.com/package/@hopgoldy/auto-git'
             },
             {
                 title: 'Screeps-Commander',
                 content: '一个用于和游戏 Screeps 控制台进行交互的 web 应用，基于 Vue + TypeScript，并使用 WebScoket 进行服务器交互。',
-                pic: require('@/images/project/Screeps-Commander.png'),
+                pic: 'https://s1.ax1x.com/2020/03/25/8jHgqf.png',
                 src: 'https://github.com/HoPGoldy/screeps-commander'
             },
             {
                 title: 'K8S 搭建与学习',
                 content: '在学习和使用 K8S 时留下的文章合集，包含搭建和使用两大部分，共计两万余字。目前博客已发布文章60篇，内容总计逾7万字。',
-                pic: require('@/images/project/k8s.png'),
+                pic: 'https://s1.ax1x.com/2020/03/25/8jTeWn.png',
                 src: 'https://www.jianshu.com/c/4ab454e9afdb'
             }
         ],

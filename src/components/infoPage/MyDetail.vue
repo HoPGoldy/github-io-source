@@ -14,22 +14,10 @@
             p 我是一名前端开发者，喜欢工程化的前端项目，注释不足恐惧症。喜欢分享，热衷于使用掌握的技术把脑子里的新鲜点子实现出来。
         .my-avatar
             .avatar-bordar
-                img(src="@/images/avatar.jpeg")
+                img(src="https://s1.ax1x.com/2020/03/25/8jTKyV.jpg")
         .my-introduce
             h3 发展方向
             p 热爱前端，为了统一的大前端梦想而努力奋斗。喜欢折腾服务器、正在研究从 git 到 docker 的部署流程，致力于构建简洁的自动 CI / CD。
-        //- .my-info
-        //-     h3 个人信息
-        //-     .content
-        //-         strong 姓名：
-        //-         span XXX
-        //-         br
-        //-         strong 年龄：
-        //-         span 22岁
-        //-         br
-        //-         strong 地址：
-        //-         span 山东菏泽
-        //-         br
     hr
     .sub-title 如何找到我？
     //- page-title(title="如何找到我?" summary="更多信息、更多分享、更多回忆")
