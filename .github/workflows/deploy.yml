@@ -16,12 +16,12 @@ jobs:
     - name: Init Node
       uses: actions/setup-node@v1 
       with:
-        node-version: "8.x"
+        node-version: "10.x"
 
     - name: Build
       run: |
-        npm install
-        npm start
+        yarn install
+        yarn build
 
     - name: Deploy
       env:
