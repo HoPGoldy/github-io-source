@@ -93,10 +93,10 @@ export default {
                 src: 'https://www.npmjs.com/package/@hopgoldy/auto-git'
             },
             {
-                title: '前端小制作',
-                content: '自己日常制作的一些小玩意, 包含一个基于 leaflet 的随机生成小游戏、一个倒计时、一个留言板和一个基于 animejs 的交互式服务架构图。',
-                pic: require('@/images/project/my-little-toys.png'),
-                src: 'https://hopgoldy.github.io/my-little-toys/#/'
+                title: 'Screeps-Commander',
+                content: '一个用于和游戏 Screeps 控制台进行交互的 web 应用，基于 Vue + TypeScript，并使用 WebScoket 进行服务器交互。',
+                pic: require('@/images/project/Screeps-Commander.png'),
+                src: 'https://github.com/HoPGoldy/screeps-commander'
             },
             {
                 title: 'K8S 搭建与学习',
