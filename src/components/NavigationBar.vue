@@ -50,6 +50,9 @@
         cursor pointer
         background-color black
 
+        img
+            width 30px
+
 .fixed
     position fixed
 .absolute

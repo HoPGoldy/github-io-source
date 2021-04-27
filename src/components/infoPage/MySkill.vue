@@ -50,6 +50,11 @@
         line-item.skill-item(v-for="item, index in fontendSkills" :key="index" :title="item.title" :star="item.star")
     hr
 
+    .skill-title 第三方包
+    .skill-list
+        line-item.skill-item(v-for="item, index in thirdPartSkills" :key="index" :title="item.title" :star="item.star")
+    hr
+
     .skill-title 其他 & 服务器
     .skill-list
         line-item.skill-item(v-for="item, index in backendSkills" :key="index" :title="item.title" :star="item.star")
@@ -69,25 +74,35 @@ export default {
     data: () => ({
         // 前端技能
         fontendSkills: [
-            { title: 'Node.js', star: 5 },
-            { title: 'Vue', star: 5 },
-            { title: 'Element UI', star: 5 },
-            { title: 'Yarn', star: 5 },
-            { title: 'Stylus', star: 5 },
-            { title: 'pug', star: 5 },
-            { title: 'Vuetify', star: 4 },
+            { title: 'Vue / vue-router / vuex', star: 5 },
+            { title: 'React / react-router / redux', star: 4 },
+            { title: 'Node.js', star: 4 },
             { title: 'TypeScript', star: 4 },
             { title: 'CSS3', star: 4 },
             { title: 'HTML5', star: 4 },
-            { title: 'WebSocket', star: 4 },
+            { title: 'ReactNative', star: 3 },
+            { title: 'Jest', star: 3 },
+            { title: '微信小程序', star: 3 },
+            { title: 'WebSocket', star: 2 },
+        ],
+        // 第三方包
+        thirdPartSkills: [
+            { title: 'Yarn', star: 5 },
+            { title: 'Stylus', star: 5 },
+            { title: 'pug', star: 5 },
+            { title: 'Element UI', star: 5 },
+            { title: 'antd / pro / proComponent', star: 5 },
+            { title: 'Vuetify', star: 4 },
             { title: 'echarts', star: 4 },
-            { title: '微信小程序', star: 4 },
-            { title: 'JQuery', star: 3 },
-            { title: 'leflet', star: 3 },
-            { title: 'animejs', star: 2 },
+            { title: 'dvajs', star: 4 },
+            { title: 'umijs', star: 4 },
+            { title: 'mobx', star: 3 },
+            { title: 'universal-router', star: 3 },
+            { title: 'rollup', star: 3 },
         ],
         // 其他技能
         backendSkills: [
+            { title: 'Markdown', star: 5 },
             { title: 'Python3', star: 5 },
             { title: 'Express', star: 4 },
             { title: 'Docker', star: 4 },
@@ -107,13 +122,10 @@ export default {
             { title: 'Mac', star: 5 },
             { title: 'Ubuntu', star: 4 },
             { title: 'Git / Git flow', star: 4 },
-            { title: 'NotePad++', star: 4 },
+            { title: 'notepad++', star: 4 },
             { title: 'Pycharm', star: 3 },
         ]
     }),
     components: { LineItem, PageTitle },
-    methods: {
-        
-    }
 }
 </script>
